@@ -3,16 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fgfgf</title>
+    <title>Welcome</title>
 	<link rel="stylesheet" href="{{ asset('styles/welcomeStyle.css') }}">
 
 </head>
 
-<style>
-    .background {
-        background-image: url("{{ asset('images/formats1.jpg') }}");
-    }
-</style>
+
 
 <body>
 <section class="showcase">

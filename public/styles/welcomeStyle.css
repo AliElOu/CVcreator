@@ -38,7 +38,7 @@ h1 {
 }
 
 .background {
-    background-image: url("asset('images/formats1.jpg')");
+    background-image: url("../images/formats1.jpg") ;
 	position: absolute;
 	top: 0;
 	left: 0;
