@@ -19,7 +19,7 @@
 			<div class="content">
 				<h1>Créateur de CV en ligne</h1>
 				<h3>Rédiger un CV et le télécharger immédiatement</h3>
-				<a href="register.php" class="btn">Commencer</a>
+				<a href="{{ route("login.show") }}" class="btn">Commencer</a>
 			</div>
 		</section>
 
@@ -33,7 +33,7 @@ session_start();
 if(isset($_SESSION['cust_Id']))
 {
 	
-	  echo "<script>window.location.href='landing.php';</script>";
+	return redirect()->route('auth');
 
 }
 ?>
