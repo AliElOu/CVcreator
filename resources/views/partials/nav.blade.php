@@ -1,23 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light px-2">
-    <a class="navbar-brand" href="{{route("home")}}">CV Creator</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link"  href="">Accueil</a>
-          </li>
-            <li class="nav-item">
-              <a class="nav-link"  href="">Tous les profils</a> 
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="">Ajouter profile</a>
-        </li>
-                  <li class="nav-item">
-            <a class="nav-link"  href="">Publications</a>
-        </li>
-      </ul>
+<head>
+  <link rel="stylesheet" href="{{ asset('styles/navbar.css') }}">
+</head>
+
+<nav>
+  <div class="nav-content">
+    <div class="logo">
+      <a href="#">CVcreator.</a>
     </div>
-    <a class="btn btn-danger"  href="{{ route('auth.logout') }}">Déconnexion</a>
-  </nav>
+    <div class="row">
+      <ul class="nav-links col-sm mt-2">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>    
+      </ul> 
+      <div class="vertical-line col-sm"></div>
+      <a class="button-23 col-sm" href="{{ route('auth.logout') }}" role="button">Profile</a>
+    </div>
+  </div>
+</nav>
+
+
+<script>
+  let nav = document.querySelector("nav");
+    window.onscroll = function() {
+      if(document.documentElement.scrollTop > 20){
+        nav.classList.add("sticky");
+      }else {
+        nav.classList.remove("sticky");
+      }
+    }
+  </script>
+

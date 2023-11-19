@@ -53,8 +53,8 @@
                       <div class="text-danger">{{$message}}</div>
                   @enderror
                     </div>
-                         <br>        
-                      <input type="submit" name="register" value="Register" class="btn btn-block btn-primary">
+                         <br>               
+                         <input type="submit" name="register" value="Register" class="btn btn-block btn-primary">
                       <div class="d-sm-flex mt-3 align-items-center">
                         <span><a href="{{ route("login.show") }}" class="Not_a_member">Already member? Log In!</a></span> 
                       </div>						

@@ -1,0 +1,162 @@
+/* Google Font Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+  } 
+
+  a {
+    text-decoration: none;
+  }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+nav{
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 17px;
+  transition: all 0.4s ease;
+  z-index: 100;
+}
+nav.sticky{
+  padding: 12px 20px;
+  background: #563D7C;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+nav .nav-content{
+  height: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .logo a{
+  font-weight: 500;
+  font-size: 35px;
+  color: #563D7C;
+}
+nav.sticky .logo a{
+  color: #fff;
+}
+.nav-content .nav-links{
+  display: flex;
+}
+.nav-content .nav-links li{
+  list-style: none;
+  margin: 0 8px;
+}
+ .nav-links li a{
+  text-decoration: none;
+  color: #000000b4;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 4px;
+  transition: all 0.3s ease;
+}
+ .nav-links li a:hover{
+   color: #563d7c;
+ }
+ nav.sticky .nav-links li a{
+   color: #fff;
+   transition: all 0.4s ease;
+}
+ nav.sticky .nav-links li a:hover{
+  color: #0E2431;
+}
+
+.vertical-line {
+    border-left: 1px solid rgba(0, 0, 0, 0.247);
+    height: 15px; 
+    margin-top: 15px; 
+  }
+
+
+/* CSS */
+.button-23 {
+  background-color: #FFFFFF;
+  border: 1px solid #563d7c;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #563d7c;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 10px;
+  margin: 0;
+  outline: none;
+  padding: 17px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
+}
+
+.button-23:focus-visible {  
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+.button-23:hover{
+    background-color: #6200ff13;
+}
+.button-23:active {
+  background-color: #ffffff;
+  border-color: #000000;
+  transform: scale(.99);
+}
+
+.button-23:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+
+nav.sticky .button-23{
+    background-color: #563d7c;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    font-weight: 550;
+    line-height: 10px;
+    margin: 0;
+    outline: none;
+    padding: 16px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+}
+nav.sticky .button-23:hover{
+    background-color: rgba(255, 255, 255, 0.075);
+}
+nav.sticky .vertical-line{
+    border-left: 1px solid rgba(255, 255, 255, 0.699);
+    height: 15px; 
+    margin-top: 15px; 
+}

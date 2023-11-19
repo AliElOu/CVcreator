@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 
 class authController extends Controller
 {
+
     public function login(Request $request) {
         $email = $request->email;
         $password = $request->password; 

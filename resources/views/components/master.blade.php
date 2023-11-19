@@ -19,9 +19,11 @@
     @auth
         @include('partials.nav')
     @endauth
-    <main>
-            @yield('main')
+    <main>  
+        @yield('main')  
     </main>
-    {{-- @include('partials.footer') --}}
+    @auth
+        @include('partials.footer')
+    @endauth
 </body>
 </html>

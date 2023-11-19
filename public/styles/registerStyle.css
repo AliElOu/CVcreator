@@ -1,6 +1,6 @@
 body {
 	font-family: "Roboto", sans-serif;
-	background-color: #800080; }
+	background-color: #5E3799; }
   
   p {
 	color: #b3b3b3;
@@ -58,7 +58,6 @@ body {
 	  outline: none;
 	  -webkit-box-shadow: none;
 	  box-shadow: none; }
-  
   .half .bg {
 	background-size: cover;
 	background-position: center; }
@@ -73,7 +72,7 @@ body {
 	padding-right: 30px; }
 
 	.btn, btn-block, btn-primary {
-		background-color: #800080  !important;
+		background-color: #5E3799  !important;
 	}
   
   .half .forgot-pass {
@@ -82,7 +81,7 @@ body {
 	font-size: 14px; } 
 
 	.half .Not_a_member {
-		color: #800080;
+		color: #5E3799;
 		position: relative;
 		top: 12px;
 		font-size: 16px; 
@@ -132,11 +131,11 @@ body {
 	background: #ccc; }
   
   .control input:checked ~ .control__indicator {
-	background: #800080; }
+	background: #5E3799; }
   
   .control:hover input:not([disabled]):checked ~ .control__indicator,
   .control input:checked:focus ~ .control__indicator {
-	background: #800080; }
+	background: #5E3799; }
   
   .control input:disabled ~ .control__indicator {
 	background: #e6e6e6;
@@ -169,6 +168,12 @@ body {
 	border-color: #7b7b7b; }
   
   .control--checkbox input:disabled:checked ~ .control__indicator {
-	background-color: #7e0cf5;
+	background-color: #5E3799;
 	opacity: .2; }
+
+	.btn.btn-block.btn-primary {
+
+		width: 100%;
+
+	}
   

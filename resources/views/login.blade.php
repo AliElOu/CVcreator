@@ -49,42 +49,9 @@
 		  
 			  
 			</div>
-			  
-			  
-		  
-			 
+			
 			</body>
 
-		
-				{{-- @if(session('register_success'))
-				<div class="alert alert-success">
-				{{ session('register_success') }}
-				</div>
-				@endif
-				<div class="logo">
-				<h1>QUICK<span> CV<span></h1>	
-				<p>Signin and create your CV</p>
-				</div>
-			
-				<div id="showLogForm" class="formDiv">
-				
-					<p style="color: white; font-size: 30px; "><strong>LOGIN</strong></p><br>
-					<form class="logIcon"  method="POST" action="{{ route("login.action") }}">
-						@csrf
-						<span class="fas fa-envelope"></span>
-						<input type="email" placeholder="example@hotmail.com" name="email" value="{{ old("email") }}" required><br>
-						<span class="fas fa-key"></span>
-						<input type="password" placeholder="Your Password" class="passInput" name="password" required><br>
-						@error('login')
-							<span class="text-danger">{{ $message }}</span>
-						@enderror
-						<button class="logbttn" name="login">Login</button>
-						<p style="text-decoration: underline; ">
-							<a id="showReg" style="color: white;font-size: 16px;" href=" {{ route("register.show") }} ">Not a member? SIGN UP!</a>
-						</p>
-					</form>
-				</div>
-			 --}}
 
 		@endsection
 	
