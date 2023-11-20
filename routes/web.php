@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\authController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\templateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,7 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/logout', [authController::class, 'logout'])->name('auth.logout');
     Route::get('/home',[homeController::class , 'index'])->name('home');
+    Route::get('/templates',[templateController::class , 'templates_show'])->name('templates.show');
 });
 
 
