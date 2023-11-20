@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\modele_cv;
 use Illuminate\Http\Request;
 
 class templateController extends Controller
@@ -9,7 +10,8 @@ class templateController extends Controller
     
 
     public function templates_show() { 
-        return view("templates");   
+        $models = modele_cv::all();
+        return view("templates",compact("models"));   
     }
 
 }
