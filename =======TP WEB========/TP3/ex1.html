@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    <!--From 1-->
+    <h1>Formulaire 1</h1>
+
+    <form action="ex1.html" name="form1" enctype="multipart/form-data">
+        nom : <input type="text" name="nom" placeholder="Votre nom?"> <br><br>
+        pseudo (login) : <input type="text" name="pseudo" placeholder="Votre pseudo?"><br><br>
+        Mot de passe : <input type="password" name="password"><br><br>
+        Mot de passe (recommencer) : <input type="password" name="re_password"><br><br>
+        fichier (photo) : <input type="file" name="photo"><br><br>
+        <input type="submit" name="envoi" onClick="" value="Submit">
+    </form>
+
+    <!--From 1 Script-->
+
+    <script>
+        
+    </script>
+
+    <!--From 2--> <br><br>
+
+    <h1>Formulaire 2</h1>
+    <label for="nom">
+        <form action="ex1.html" name="form2">
+            Votre nom? <br>
+            <input type="text" id="nom" name="nom"><br>
+            Votre prenom? <br>
+            <input type="text" name="prenom"><br>
+            Votre email? <br>
+            <input type="email" name="email"><br><br>
+            Veuillez indiquer votre type de bac: <br>
+            <input type="radio" name="choix" value="1">Bac S <br>
+            <input type="radio" name="choix" value="2">Bac STI <br>
+            <input type="radio" name="choix" value="3">Bac STT <br>
+            <input type="radio" name="choix" value="4">Autre <br><br>
+            <input type="submit" name="envoi" value="Submit">
+        </form>
+    </label>
+    
+    <!--From 3--> <br><br>
+
+    <h1>Formulaire 3</h1>
+    <label for="groupe">
+        <form action="ex1.html" name="form3">
+            Dans quel groupe etes vous? <br>
+            <select name="groupe" id="groupe">
+                <option value="1">S1-A</option>
+                <option value="2">S1-B</option>
+                <option value="3">S2-A</option>
+                <option value="4">S1-B</option>
+            </select> <br>
+            Votre numéro? <br>  
+            <input type="text" name="number"> <br>
+            votre choix d'option : <br>
+            <input type="checkbox" name="check1" value="1"> Allemand <br>
+            <input type="checkbox" name="check2" value="2"> Sport <br><br>
+            <input type="submit" name="envoi" value="Valider">
+            <input type="reset" name="reset" value= "Effacer">
+        </form>
+    </label>
+
+    
+</body>
+</html>
