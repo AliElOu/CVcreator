@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sections', function (Blueprint $table) {
+        Schema::create('experiences', function (Blueprint $table) {
             $table->id();
-            $table->String("title");
-            $table->integer("order");
+            $table->String("company");
+            $table->String("position");
+            $table->String("desc");
+            $table->String("started");
+            $table->String("ended");
             $table->foreignId('cv_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

@@ -52,3 +52,36 @@ img[class="customNextBtn"],img[class="customPrevBtn"] {
 
 
 
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 1.6rem;
+}
+
+
+
+.text-blue-dark{color: #1A1C6A;}
+.fs-18{font-size: 18px;}
+.fs-14{font-size: 14px;}
+.fw-6{font-weight: 600;}
+.ls-1{letter-spacing: 1px;}
+.text-dark{color: #1e2532;}
+.bg-bright{background-color: #EFF2F9;}
+.text-uppercase{text-transform: uppercase;}
+
+
+
+
+.header{
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header-content{
+    max-width: 740px;
+    margin-right: auto;
+    margin-left: auto;
+}

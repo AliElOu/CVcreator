@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('champs', function (Blueprint $table) {
+        Schema::create('educations', function (Blueprint $table) {
             $table->id();
-            $table->String("content");
-            $table->integer("order");
-            $table->foreignId('section_id')->constrained()->onDelete('cascade');
+            $table->String("institut");
+            $table->String("degree");
+            $table->String("started");
+            $table->String("ended");
+            $table->foreignId('cv_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

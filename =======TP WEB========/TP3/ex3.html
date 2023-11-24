@@ -10,7 +10,7 @@
     <p id="start_text">Lancer le jeux !</p><input id="start_button" type="button" name="start" value="Start" onclick="start()">
     <form name="form1">
         <p id="guess_text">Supposez le nombre (entre 0 et 100) : </p><br> 
-        <input type="text" name="num">
+        <input type="number" name="num">
         <input type="button" name="validate" onclick="valider()" value="Valider">
     </form>
     <script>
@@ -37,14 +37,11 @@
             } else {
                 if(document.form1.num.value > n){
                     alert("Faux, le nombre est plus petit!");
-                    s++;
+                    
                 } else if(document.form1.num.value < n) {
                     alert("Faux, le nombre est plus grand!");
-                    s++;
-                } else if(!Number.isInteger(document.form1.num.value)) {
-                    alert("Veuillez entrer un nombre entier!");
-                }
-                
+                } 
+                s++;
             }
         }
         function nbAlea(min, max) {

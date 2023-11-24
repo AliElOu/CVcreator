@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('cvs', function (Blueprint $table) {
             $table->id();
-            $table->String("title");
+            $table->String("fullname");
+            $table->String("Email");
+            $table->String("objectif");
+            $table->String("mob_num");
+            $table->String("birth_date");
+            $table->String("address");
+            $table->String("gender");
+            $table->String("hobbies");
+            $table->String("languages");
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('modele_cv_id')->constrained()->onDelete('cascade');
             $table->timestamps();

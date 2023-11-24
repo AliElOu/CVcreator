@@ -5,12 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class cv extends Model
+class experience extends Model
 {
 
     protected $fillable = [
-        'user_id',
-        'modele_cv_id',
+        'company',
+        'position',
+        'desc',
+        'started',
+        'ended',
+        'cv_id',
     ];
+
+
     use HasFactory;
 }

@@ -31,7 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', [authController::class, 'logout'])->name('auth.logout');
     Route::get('/home',[homeController::class , 'index'])->name('home');
     Route::get('/templates',[templateController::class , 'templates_show'])->name('templates.show');
-    Route::get('/creation/{template}',[creationController::class , 'create_show'])->name('create.show');
+    Route::get('/template/{template}',[templateController::class , 'template_create'])->name('template.create');
+    Route::get('/creation',[creationController::class , 'create_show'])->name('create.show');
+    Route::post('/creation/add_exp',[creationController::class , 'add_exp'])->name('add.exp');
+    Route::get('/creation/remove_exp',[creationController::class , 'remove_exp'])->name('remove.exp');
 });
 
 
