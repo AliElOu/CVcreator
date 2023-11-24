@@ -9,6 +9,15 @@ class cv extends Model
 {
 
     protected $fillable = [
+        "fullname",
+        "Email",
+        "objectif",
+        "mob_num",
+        "birth_date",
+        "address",
+        "gender",
+        'hobbies',
+        "languages",
         'user_id',
         'modele_cv_id',
     ];

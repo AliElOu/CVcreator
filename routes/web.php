@@ -3,6 +3,7 @@
 use App\Http\Controllers\authController;
 use App\Http\Controllers\creationController;
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\myResumesController;
 use App\Http\Controllers\templateController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,10 +32,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', [authController::class, 'logout'])->name('auth.logout');
     Route::get('/home',[homeController::class , 'index'])->name('home');
     Route::get('/templates',[templateController::class , 'templates_show'])->name('templates.show');
+    Route::get('/resumes',[myResumesController::class , 'resumes_show'])->name('resumes.show');
     Route::get('/template/{template}',[templateController::class , 'template_create'])->name('template.create');
     Route::get('/creation',[creationController::class , 'create_show'])->name('create.show');
     Route::post('/creation/add_exp',[creationController::class , 'add_exp'])->name('add.exp');
+    Route::post('/creation/add_edu',[creationController::class , 'add_edu'])->name('add.edu');
+    Route::post('/creation/add_com',[creationController::class , 'add_com'])->name('add.com');
     Route::get('/creation/remove_exp',[creationController::class , 'remove_exp'])->name('remove.exp');
+    Route::get('/creation/remove_edu',[creationController::class , 'remove_edu'])->name('remove.edu');
+    Route::get('/creation/remove_com',[creationController::class , 'remove_com'])->name('remove.com');
+    Route::post('/creation/save',[creationController::class , 'save'])->name('save');
+    Route::get('/resumes/remove_cv',[myResumesController::class , 'remove_cv'])->name('remove.cv');
+    Route::get('/resumes/edit_cv',[myResumesController::class , 'edit_cv'])->name('edit.cv');
 });
 
 

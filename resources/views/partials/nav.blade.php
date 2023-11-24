@@ -7,16 +7,9 @@
     <div class="logo">
       <a href="{{ route("home") }}">CVcreator.</a>
     </div>
-    <div class="row">
-      <ul class="nav-links col-sm mt-2">
-        <li><a href="{{ route("home") }}">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>    
-      </ul> 
-      <div class="vertical-line col-sm"></div>
-      <a class="button-23 col-sm" href="{{ route('auth.logout') }}" role="button">Profile</a>
+    <div class="row">   
+      <a class="button-23 col-sm me-3" href="{{ route('resumes.show') }}" role="button">MyResumes</a>
+      <button onclick="window.location.href='{{ route('auth.logout') }}'" class="btn btn-outline-danger col-sm"><i class="bi bi-box-arrow-left"></i></button>
     </div>
   </div>
 </nav>

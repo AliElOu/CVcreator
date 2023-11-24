@@ -3,6 +3,12 @@
     
 
 @section("main")
+<style>
+    .btn-primary{
+        background-color:#563d7c;
+        border-color:#563d7c;
+    }
+</style>
 
     <div class="pt-5 pb-5" style="background-color: #EFF2F9;">
         <div class="container">
@@ -10,39 +16,40 @@
                 <div class="d-flex justify-content-between border-bottom">
                     <h5>Créer un CV</h5>      
                     <div>
-                        <a href="" class="text-decoration-none"><i class="bi bi-arrow-left-circle"></i> Back</a>
+                        <a href="{{ route("templates.show") }}" style="color:#563d7c;"  class="text-decoration-none"><i class="bi bi-arrow-left-circle"></i> Back</a>
                     </div>
                 </div>
     
                 <div>
     
-                    <form class="row g-3 p-3">
+                    <form class="row g-3 p-3" action="{{ route("save") }}" method="post">
+                        @csrf
                         <h5 class="mt-3 text-secondary"><i class="bi bi-person-badge"></i> Informations personnelles</h5>
                         <div class="col-md-6">
                             <label class="form-label">Nom complet</label>
-                            <input type="text" name="fullname" placeholder="Ali El Ouankrimi" class="form-control">
+                            <input type="text" name="fullname" value="{{$cv->fullname}}" placeholder="Ali El Ouankrimi" class="form-control">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Email</label>
-                            <input type="email" name="Email" placeholder="test@test.com" class="form-control">
+                            <input type="email" name="Email" value="{{$cv->Email}}" placeholder="test@test.com" class="form-control">
                         </div>
                         <div class="col-12">
                             <label class="form-label">Ojectif</label>
-                            <textarea class="form-control" name="objectif" rows="3"></textarea>
+                            <textarea class="form-control" value="{{$cv->objectif}}" name="objectif" rows="3"></textarea>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Numéro de téléphone</label>
-                            <input type="number" min="1111111111" name="mob_num" placeholder="+212613794357" max="9999999999"
+                            <input type="number" min="1111111111" name="mob_num" value="{{$cv->mob_num}}" placeholder="+212613794357" max="9999999999"
                                 class="form-control">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Date Of Birth</label>
-                            <input type="date" name="birth_date" class="form-control">
+                            <input type="date" name="birth_date" value="{{$cv->birth_date}}" class="form-control">
                         </div>
     
                         <div class="col-12">
                             <label for="inputAddress" class="form-label"> Address</label>
-                            <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <input type="text" name="address" class="form-control" value="{{$cv->address}}" id="inputAddress" placeholder="1234 Main St">
                         </div>
                         
                         <div class="col-md-6">
@@ -56,12 +63,12 @@
     
                         <div class="col-md-6">
                             <label class="form-label">Hobbies</label>
-                            <input type="text" name="hobbies" placeholder="Lire des livres, jouer des jeux video ..." class="form-control">
+                            <input type="text" name="hobbies" value="{{$cv->hobbies}}" placeholder="Lire des livres, jouer des jeux video ..." class="form-control">
                         </div>
     
                         <div class="col-12">
                             <label class="form-label">Languages Known</label>
-                            <input type="text" name="languages" placeholder="Hindi,English" class="form-control">
+                            <input type="text" name="languages" value="{{$cv->languages}}" placeholder="Hindi,English" class="form-control">
                         </div>
     
                         
@@ -69,7 +76,7 @@
                         <div class="d-flex justify-content-between">
                             <h5 class=" text-secondary"><i class="bi bi-briefcase"></i> Experience</h5>
                             <div>
-                                <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#exp"><i class="bi bi-file-earmark-plus"></i> Ajouter</a>
+                                <a class="text-decoration-none" style="color:#563d7c;" data-bs-toggle="modal" data-bs-target="#exp"><i class="bi bi-file-earmark-plus"></i> Ajouter</a>
                             </div>
                         </div>
                                      
@@ -116,30 +123,45 @@
                         <div class="d-flex justify-content-between">
                             <h5 class=" text-secondary"><i class="bi bi-journal-bookmark"></i> Education</h5>
                             <div>
-                                <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#educ">
+                                <a class="text-decoration-none" style="color:#563d7c;" data-bs-toggle="modal" data-bs-target="#educ">
                                     <i class="bi bi-file-earmark-plus"></i>
                                      Ajouter</a>
                             </div>
                         </div>
                                                     
                         <div class="d-flex flex-wrap">
-    
+
+                            @if (count($educations) == 0)
+                                <div class="col-12 col-md-6 p-2">
+                                    <div class="p-2 border rounded">
+                                            <h6>Tu n'as pas aucune éducation</h6>                                  
+                                        <p class="small text-secondary m-0" style="">
+                                            Si vous avez des éducations, ajoutez les.
+                                        </p>
+                                      
+        
+                                    </div>
+                                </div>                               
+                            @endif
+                            
+                            @foreach ($educations as $education)
                             <div class="col-12 col-md-6 p-2">
                                 <div class="p-2 border rounded">
                                     <div class="d-flex justify-content-between">
-                                        <h6>Completed 12th Class (Arts Stream)</h6>
-                                        <a href=""><i class="bi bi-x-lg"></i></a>
+                                        <h6>{{ $education->degree }}</h6>
+                                        <a href="{{ route("remove.edu",["edu" => $education->id, "cv" => $education->cv_id]) }}"><i class="bi bi-x-lg"></i></a>
                                     </div>
     
                                     <p class="small text-secondary m-0" style="">
-                                        <i class="bi bi-book"></i> Central Board Of Secondary Education, New Delhi
+                                        <i class="bi bi-book"></i> {{ $education->institut }}
                                     </p>
                                     <p class="small text-secondary m-0" style="">
-                                        Passed / Completed In 2023
+                                        {{$education->started}} - {{$education->ended}}
                                     </p>
     
                                 </div>
                             </div>
+                            @endforeach
     
                         </div>
     
@@ -147,27 +169,38 @@
                         <div class="d-flex justify-content-between">
                             <h5 class=" text-secondary"><i class="bi bi-boxes"></i> Compétences</h5>
                             <div> 
-                                <a class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#skls"><i class="bi bi-file-earmark-plus"></i> Ajouter</a>
+                                <a class="text-decoration-none" style="color:#563d7c;" data-bs-toggle="modal" data-bs-target="#skls"><i class="bi bi-file-earmark-plus"></i> Ajouter</a>
                             </div>
                         </div>
     
                         <div class="d-flex flex-wrap">
- 
-            
+
+                            @if (count($competences) == 0)
                             <div class="col-12 p-2">
                                 <div class="p-2 border rounded">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <h6><i class="bi bi-caret-right"></i> Basic Knowledge in Computer & Internet</h6>
-                                        <a href=""><i class="bi bi-x-lg"></i></a>
-                                    </div>
+                                        <h6>Vous n'avez pas aucune compétence</h6>                             
                                 </div>
                             </div>
+                            @endif
+ 
+                            @foreach ($competences as $competence)
+                                <div class="col-12 p-2">
+                                    <div class="p-2 border rounded">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6><i class="bi bi-caret-right"></i> {{ $competence->name }}</h6>
+                                            <a href="{{ route("remove.com",["com" => $competence->id, "cv" => $competence->cv_id]) }}"><i class="bi bi-x-lg"></i></a>
+                                        </div>
+                                    </div>
+                                </div> 
+                            @endforeach
+                            
 
 
                         </div>
                         <div class="col-12 text-end">
                             <button type="submit" class="btn btn-primary"><i class="bi bi-floppy"></i> Sauvegarder </button>
                         </div>
+                        <input type="hidden" value="{{$cv_id}}" name="id">
                     </form>
                 </div>
              
@@ -234,27 +267,24 @@
         <div class="modal-body">
 
             
-                <form class="row g-3">
+                <form class="row g-3" action="{{ route("add.edu",["cv" => $cv_id]) }}" method="post">
+                    @csrf
                     <div class="col-md-12">
                     <label for="inputInstitut" class="form-label">Institut</label>
-                    <input type="text" class="form-control" id="inputInstitut">
+                    <input type="text" name="institut" class="form-control" id="inputInstitut">
                     </div>
                     <div class="col-md-12">
                     <label for="inputDiplome" class="form-label">Diplome</label>
-                    <input type="text" class="form-control" id="inputDiplome">
+                    <input type="text" name="degree" class="form-control" id="inputDiplome">
                     </div>
                     <div class="col-md-6">
                     <label for="inputDebut2" class="form-label">Début</label>
-                    <input type="text" class="form-control" id="inputDebut2">
+                    <input type="text" name="started" class="form-control" id="inputDebut2">
                     </div>
                     <div class="col-md-6">
                     <label for="inputFin2" class="form-label">Fin</label>
-                    <input type="text" class="form-control" id="inputFin2">
-                    </div>
-                    <div class="col-md-12">
-                        <label for="inputDescription" class="form-label">Description</label>
-                        <textarea class="form-control" id="inputDescription" rows="3"></textarea><br>
-                    </div>                                           
+                    <input type="text" name="ended" class="form-control" id="inputFin2">
+                    </div>                                                      
                     <div class="col-12">
                     <button type="submit" class="btn btn-primary">Ajouter</button>
                     </div>
@@ -278,10 +308,11 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">                            
-                <form>                    
+                <form method="post" action="{{ route("add.com",["cv" => $cv_id]) }}">  
+                    @csrf                  
                     <div>
                         <label for="inputCompetences" class="form-label">Compétence</label>
-                        <input type="text" class="form-control" id="inputCompetences"><br>
+                        <input type="text" name="name" class="form-control" id="inputCompetences"><br>
                     </div>                  
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Ajouter</button>

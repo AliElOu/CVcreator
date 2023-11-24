@@ -78,6 +78,7 @@ nav.sticky .logo a{
     border-left: 1px solid rgba(0, 0, 0, 0.247);
     height: 15px; 
     margin-top: 15px; 
+    margin-left: 20px;
   }
 
 
@@ -160,3 +161,11 @@ nav.sticky .vertical-line{
     height: 15px; 
     margin-top: 15px; 
 }
+
+nav.sticky .btn.btn-outline-danger {
+  color: #FFFFFF;
+  background-color: #DC3545;
+
+}
+
+
