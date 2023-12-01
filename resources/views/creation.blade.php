@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-12">
                             <label class="form-label">Ojectif</label>
-                            <textarea class="form-control" value="{{$cv->objectif}}" name="objectif" rows="3"></textarea>
+                            <textarea class="form-control" name="objectif" rows="3">{{$cv->objectif}}</textarea>
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Numéro de téléphone</label>

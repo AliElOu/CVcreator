@@ -32,7 +32,7 @@
                                       <p class="card-text"></p>
                                     </div>
                                     <div class="d-flex mb-2 ps-2 border-top pt-2">
-                                        <a style="color: #563d7c" href="" class="btn text-decoration-none small"><i class="bi bi-file-text"></i> Ouvrir</a>
+                                        <a style='color: #563d7c' href='{{ route('open.cv',['id' => $cv->id, 'template' => $cv->modele_cv_id]) }}' class='btn text-decoration-none small'><i class='bi bi-file-text'></i> Ouvrir</a>
                                         <a style="color: #563d7c" href="{{ route("edit.cv",['id' => $cv->id]) }}" class="btn text-decoration-none small"><i class="bi bi-pencil-square"></i> Modifier</a>
                                         <a style="color: #563d7c" data-bs-toggle="modal" data-bs-target="#deleteModal" href="" class="btn text-decoration-none small"><i class="bi bi-trash2"></i> Supprimer</a>            
                                     </div>

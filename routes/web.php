@@ -44,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/creation/save',[creationController::class , 'save'])->name('save');
     Route::get('/resumes/remove_cv',[myResumesController::class , 'remove_cv'])->name('remove.cv');
     Route::get('/resumes/edit_cv',[myResumesController::class , 'edit_cv'])->name('edit.cv');
+    Route::get('/resumes/{id}/{template}',[myResumesController::class , 'open_cv'])->name('open.cv');
+    Route::get('/resumes/telecharger-pdf',[cvController::class , 'download_cv'])->name('download.cv');
 });
 
 
