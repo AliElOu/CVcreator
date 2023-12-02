@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\authController;
 use App\Http\Controllers\creationController;
+use App\Http\Controllers\cvController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\myResumesController;
 use App\Http\Controllers\templateController;
@@ -45,7 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/resumes/remove_cv',[myResumesController::class , 'remove_cv'])->name('remove.cv');
     Route::get('/resumes/edit_cv',[myResumesController::class , 'edit_cv'])->name('edit.cv');
     Route::get('/resumes/{id}/{template}',[myResumesController::class , 'open_cv'])->name('open.cv');
-    Route::get('/resumes/telecharger-pdf',[cvController::class , 'download_cv'])->name('download.cv');
+    Route::post('/resumes/telecharger-pdf',[cvController::class , 'download_cv'])->name('download.cv');
 });
 
 
