@@ -42,12 +42,16 @@ class myResumesController extends Controller
             $educations = DB::table('educations')->where('cv_id', $cv_id)->get();
             $competences = DB::table('competences')->where('cv_id', $cv_id)->get();
             $cv = DB::table('cvs')->where('id', $cv_id)->first();
+            $languages = explode(",",$cv->languages);
+            $hobbies = explode(",",$cv->hobbies);
             return view("templates.$template",compact([
                'experiences',
                'educations',
                'cv_id',
                'competences',
-               'cv'
+               'cv',
+               'languages',
+               'hobbies'
            ]));
         }else{
             abort(404);

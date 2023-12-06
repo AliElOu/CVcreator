@@ -15,10 +15,19 @@
     <script src="{{ asset('scripts/resume.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('styles/fonts.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="{{ asset('styles/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ $style }}">
     <title>Cv</title>
 </head>
 <body>
-<button id="downloadPdf">Télécharger en PDF</button>
+    <nav>
+        <div class="nav-content">
+            <button type="button" id="downloadPdf" class="btn btn-light btn-sm">
+                <i class="bi bi-download"></i>                Télécharger
+              </button>
+        </div>
+    </nav>
 
 <div class="container" id="partie">
     @yield('main')  

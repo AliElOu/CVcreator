@@ -1,4 +1,4 @@
-<x-resume style="">
+<x-resume style="{{ asset('styles/1.css') }}">
   @section("main")
   <div class="header">
     <div class="full-name">

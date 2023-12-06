@@ -1,0 +1,16 @@
+INSERT INTO ANNUAIRE (nom, prenom, numero_poste) VALUES
+('Doe', 'John', '99.01'),
+('Smith', 'Alice', '99.02'),
+('Brown', 'Emma', '99.03');
+
+
+
+INSERT INTO ANNUAIRE (nom, prenom, numero_poste) VALUES
+('Doe', 'John', '99.01'),
+('Smith', 'Alice', '99.02'),
+('Brown', 'Emma', '99.03');
+
+
+
+GRANT SELECT ON tp TO PUBLIC;
+
