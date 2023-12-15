@@ -20,8 +20,14 @@ class myResumesController extends Controller
 
     function remove_cv(Request $request){
         $cv = $request->cvId;
-        cv::where('id', $cv)->delete();
-        return redirect()->route("resumes.show");
+        $user = DB::table('cvs')->select('user_id')->where('id', $cv)->first();
+        $user_id = $user->user_id;
+        if($user_id == auth()->id()){
+            cv::where('id', $cv)->delete();
+            return redirect()->route("resumes.show");
+        }else {
+            abort(404);
+        }
     }
 
     function edit_cv(Request $resquest){
@@ -34,8 +40,8 @@ class myResumesController extends Controller
 
     function open_cv(Request $resquest){
         $cv_id = $resquest->id;
-        $user = DB::table('cvs')->select('user_id')->where('id', $cv_id)->get();
-        $user_id = $user[0]->user_id;
+        $user = DB::table('cvs')->select('user_id')->where('id', $cv_id)->first();
+        $user_id = $user->user_id;
         $template = $resquest->template;
         if($user_id == auth()->id()){
             $experiences = DB::table('experiences')->where('cv_id', $cv_id)->get();

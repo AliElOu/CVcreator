@@ -1,6 +1,5 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET" && !isset($_GET['traitement'])) {
-    // Affichage du formulaire
     echo '
     <!DOCTYPE html>
     <html lang="fr">
@@ -34,13 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && !isset($_GET['traitement'])) {
     </html>';
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['traitement'])) {
     if (!empty($_GET['nom']) && !empty($_GET['prenom']) && isset($_GET['sexe']) && isset($_GET['vins'])) {
-        // Traitement des données
         $nom = $_GET['nom'];
         $prenom = $_GET['prenom'];
         $sexe = $_GET['sexe'];
         $vins = $_GET['vins'];
 
-        // Affichage des résultats
         echo "Nom : $nom <br>";
         echo "Prénom : $prenom <br>";
         echo "Sexe : $sexe <br>";

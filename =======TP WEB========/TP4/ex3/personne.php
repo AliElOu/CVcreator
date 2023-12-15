@@ -18,7 +18,7 @@ class Personne {
         $date_naissance = new DateTime($this->date_naissance);
         $aujourd_hui = new DateTime('now');
         $difference = $date_naissance->diff($aujourd_hui);
-        return $difference->y; // Renvoie l'âge en années
+        return $difference->y; 
     }
 }
 ?>
